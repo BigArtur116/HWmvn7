@@ -5,6 +5,7 @@ public class Main {
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 5};
+//        long[] sales = {8_000_000_000L, 15_000_000_000L, 13_000_000_000L, 15_000_000_000L, 17_000_000_000L, 20_000_000_000L, 19_000_000_000L, 20_000_000_000L, 7_000_000_000L, 14_000_000_000L, 14_000_000_000L, 5_000_000_000L};
 
 
         System.out.println("Сумма всех продаж " + service.sumOfAllSales(sales) + " руб.");
