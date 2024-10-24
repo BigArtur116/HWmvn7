@@ -12,9 +12,11 @@ public class Main {
 
         System.out.println("Средняя сумма всех продаж " + service.averageOfAllSales(sales) + " руб.");
 
-        System.out.println("Месяц " + service.monthWithMinSales(sales) + " с min продажами на сумму " + sales[service.monthWithMinSales(sales) - 1] + " руб.");
+        int monthWithMinSales = service.monthWithMinSales(sales);
+        System.out.println("Месяц " + monthWithMinSales + " с min продажами на сумму " + sales[monthWithMinSales - 1] + " руб.");
 
-        System.out.println("Месяц " + service.monthWithMaxSales(sales) + " с max продажами на сумму " + sales[service.monthWithMaxSales(sales) - 1] + " руб.");
+        int monthWithMaxSales = service.monthWithMaxSales(sales);
+        System.out.println("Месяц " + monthWithMaxSales + " с max продажами на сумму " + sales[monthWithMaxSales - 1] + " руб.");
 
         System.out.println("Количество мес. ниже среднего " + service.salesBeloveAverage(sales));
 
