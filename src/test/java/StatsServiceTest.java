@@ -21,8 +21,9 @@ public class StatsServiceTest {
     public void averageOfAllSalesTest() {
         StatsService service = new StatsService();
         long[] sales = {7, 5, 15, 17, 20, 20, 14, 14, 5};
+        long sum = 117;
         long expectd = 13; // Среднее относительно всех покупок
-        long actual = service.averageOfAllSales(sales);
+        long actual = service.averageOfAllSales(sales, sum);
         Assertions.assertEquals(expectd, actual);
     }
 
@@ -49,8 +50,9 @@ public class StatsServiceTest {
     public void salesBeloveAverageTest() {
         StatsService service = new StatsService();
         long[] sales = {7, 5, 15, 17, 20, 20, 14, 14, 5};
+        long average = 13;
         long expectd = 3; //Количество мес. ниже среднего по продажам
-        long actual = service.salesBeloveAverage(sales);
+        long actual = service.salesBeloveAverage(sales, average);
         Assertions.assertEquals(expectd, actual);
     }
 
@@ -58,8 +60,9 @@ public class StatsServiceTest {
     public void salesAboveAverageTest() {
         StatsService service = new StatsService();
         long[] sales = {7, 5, 15, 17, 20, 20, 14, 14, 5};
+        long average = 13;
         long expectd = 6; //Количество мес. выше среднего по продажам
-        long actual = service.salesAboveAverage(sales);
+        long actual = service.salesAboveAverage(sales, average);
         Assertions.assertEquals(expectd, actual);
     }
 }

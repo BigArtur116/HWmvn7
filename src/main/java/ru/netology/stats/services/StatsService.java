@@ -5,20 +5,11 @@ import java.util.Arrays;
 public class StatsService {
 
     public long sumOfAllSales(long[] sales) {
-//        long sumSales = 0;
-//
-//        for (int i = 0; i < sales.length; i++) {
-//                sumSales = sumSales + sales[i];
-//            }
-        long sumSales = Arrays.stream(sales).sum();
-
-        return sumSales;
+        return Arrays.stream(sales).sum();
     }
 
-    public long averageOfAllSales(long[] sales) {
-        long averageSales = Arrays.stream(sales).sum() / sales.length;
-
-        return averageSales;
+    public long averageOfAllSales(long[] sales, long sum) {
+        return sum / sales.length;
     }
 
     public int monthWithMinSales(long[] sales) {
@@ -44,10 +35,9 @@ public class StatsService {
     }
 
 
-    public int salesBeloveAverage(long[] sales) {
+    public int salesBeloveAverage(long[] sales, long average) {
         int salesBelovAverage = 0;
-        long averageSalesVolume = averageOfAllSales(sales);
-
+        long averageSalesVolume = average;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSalesVolume) {
                 salesBelovAverage++;
@@ -56,20 +46,13 @@ public class StatsService {
         return salesBelovAverage;
     }
 
-    public int salesAboveAverage(long[] sales) {
+    public int salesAboveAverage(long[] sales, long average) {
         int salesAbovAverage = 0;
-        long averageSalesVolume = averageOfAllSales(sales);
-
-//        for (int i = 0; i < sales.length; i++) {
-//            if (sales[i] > averageSalesVolume) {
-//                salesAbovAverage++;
-//            }
-//        }
+        long averageSalesVolume = average;
         for (long sale : sales) {
             if (sale > averageSalesVolume) {
                 salesAbovAverage++;
             }
-
         }
         return salesAbovAverage;
     }
