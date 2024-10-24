@@ -16,7 +16,8 @@ public class StatsService {
     }
 
     public long averageOfAllSales(long[] sales) {
-        long averageSales = sumOfAllSales(sales) / sales.length;
+        long sumSales = Arrays.stream(sales).sum();
+        long averageSales = sumSales / sales.length;
 
         return averageSales;
     }
@@ -48,9 +49,10 @@ public class StatsService {
 
     public int salesBeloveAverage(long[] sales) {
         int salesBelovAverage = 0;
+        long averageSales = averageOfAllSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageOfAllSales(sales)) {
+            if (sales[i] < averageSales) {
                 salesBelovAverage++;
             }
         }
@@ -59,10 +61,11 @@ public class StatsService {
     }
 
     public int salesAboveAverage(long[] sales) {
-        int salesAbovAverage = 0; //
+        int salesAbovAverage = 0;
+        long averageSales = averageOfAllSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageOfAllSales(sales)) {
+            if (sales[i] > averageSales) {
                 salesAbovAverage++;
             }
         }
