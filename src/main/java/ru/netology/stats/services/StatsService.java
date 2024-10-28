@@ -5,7 +5,13 @@ import java.util.Arrays;
 public class StatsService {
 
     public long sumOfAllSales(long[] sales) {
-        return Arrays.stream(sales).sum();
+        long sumSales = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > 0) {
+                sumSales = sales[i] + sumSales;
+            }
+        }
+        return sumSales;
     }
 
     public long averageOfAllSales(long[] sales, long sum) {
