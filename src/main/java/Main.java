@@ -10,7 +10,7 @@ public class Main {
         long sum = service.sumOfAllSales(sales);
         System.out.println("Сумма всех продаж " + sum+ " руб.");
 
-        long average = service.averageOfAllSales(sales, sum);
+        long average = service.averageOfAllSales(sales);
         System.out.println("Средняя сумма всех продаж " + average + " руб.");
 
         int monthWithMinSales = service.monthWithMinSales(sales);
@@ -19,9 +19,9 @@ public class Main {
         int monthWithMaxSales = service.monthWithMaxSales(sales);
         System.out.println("Месяц " + monthWithMaxSales + " с max продажами на сумму " + sales[monthWithMaxSales - 1] + " руб.");
 
-        System.out.println("Количество мес. ниже среднего " + service.salesBeloveAverage(sales, average));
+        System.out.println("Количество мес. ниже среднего " + service.salesBeloveAverage(sales));
 
-        System.out.println("Количество мес. выше среднего " + service.salesAboveAverage(sales, average));
+        System.out.println("Количество мес. выше среднего " + service.salesAboveAverage(sales));
 
     }
 }

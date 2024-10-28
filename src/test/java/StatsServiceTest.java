@@ -23,7 +23,7 @@ public class StatsServiceTest {
         long[] sales = {7, 5, 15, 17, 20, 20, 14, 14, 5};
         long sum = 117;
         long expectd = 13; // Среднее относительно всех покупок
-        long actual = service.averageOfAllSales(sales, sum);
+        long actual = service.averageOfAllSales(sales);
         Assertions.assertEquals(expectd, actual);
     }
 
@@ -52,7 +52,7 @@ public class StatsServiceTest {
         long[] sales = {7, 5, 15, 17, 20, 20, 14, 14, 5};
         long average = 13;
         long expectd = 3; //Количество мес. ниже среднего по продажам
-        long actual = service.salesBeloveAverage(sales, average);
+        long actual = service.salesBeloveAverage(sales);
         Assertions.assertEquals(expectd, actual);
     }
 
@@ -62,7 +62,7 @@ public class StatsServiceTest {
         long[] sales = {7, 5, 15, 17, 20, 20, 14, 14, 5};
         long average = 13;
         long expectd = 6; //Количество мес. выше среднего по продажам
-        long actual = service.salesAboveAverage(sales, average);
+        long actual = service.salesAboveAverage(sales);
         Assertions.assertEquals(expectd, actual);
     }
 }
